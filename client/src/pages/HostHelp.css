@@ -1,0 +1,23 @@
+.help-container{
+width:600px;
+margin:auto;
+margin-top:80px;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.help-section{
+margin-top:25px;
+}
+
+.help-item{
+padding:12px;
+border-bottom:1px solid #eee;
+cursor:pointer;
+}
+
+.help-item:hover{
+background:#f6efea;
+}

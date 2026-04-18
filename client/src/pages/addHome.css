@@ -1,0 +1,260 @@
+/* /* ===============================
+   PAGE WRAPPER
+=============================== */
+.page-wrapper{
+  min-height:100vh;
+  background:#f9f4f3;
+  padding-bottom:60px;
+  padding-top:20px;
+  
+}
+
+.container{
+  max-width:900px;
+   margin:40px auto 0; 
+  padding:30px 20px;
+}
+
+
+/* ===============================
+   TITLE
+=============================== */
+.page-title{
+  font-size:28px;
+  font-weight:700;
+  text-align:center;
+  color:#8c5454;
+  margin-bottom:25px;
+}
+.img-box{
+  position:relative;
+  display:inline-block;
+}
+
+.remove-btn{
+  position:absolute;
+  top:4px;
+  right:4px;
+  background:#000;
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  width:22px;
+  height:22px;
+  cursor:pointer;
+  font-size:12px;
+}
+
+
+
+
+/* ===============================
+   FORM CARD
+=============================== */
+.home-form{
+  background:#fff;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   SECTION TITLE
+=============================== */
+.section-title{
+  font-size:18px;
+  font-weight:700;
+  color:#8c5454;
+  margin:30px 0 12px;
+  border-bottom:1px solid #e5beb5;
+  padding-bottom:6px;
+}
+
+/* ===============================
+   LABEL
+=============================== */
+.form-label{
+  font-weight:600;
+  font-size:14px;
+  margin-bottom:5px;
+  display:block;
+  color:#5a3a3a;
+}
+
+/* ===============================
+   INPUTS
+=============================== */
+.form-input,
+select,
+textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #e5beb5;
+  border-radius:10px;
+  font-size:14px;
+  background:#fff;
+  margin-bottom:12px;
+}
+
+.form-input:focus,
+textarea:focus,
+select:focus{
+  border-color:#8c5454;
+  outline:none;
+  box-shadow:0 0 5px rgba(140,84,84,0.3);
+}
+
+/* ===============================
+   GRID
+=============================== */
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+/* ===============================
+   RADIO OPTIONS
+=============================== */
+.option-box{
+  border:1px solid #e5beb5;
+  padding:12px;
+  border-radius:12px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+}
+
+/* ===============================
+   AMENITIES
+=============================== */
+.amenities-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:10px;
+}
+
+.amenity-box{
+  border:1px solid #e5beb5;
+  padding:10px;
+  border-radius:10px;
+  background:#fff;
+  font-size:14px;
+}
+
+/* ===============================
+   PHOTO PREVIEW
+=============================== */
+.preview-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:10px;
+  margin-top:15px;
+}
+
+.preview-img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.preview-grid img:first-child{
+  grid-column: span 3;
+  height:220px;
+}
+
+/* ===============================
+   TEXTAREA
+=============================== */
+.big-textarea{
+  width:100%;
+  min-height:160px;
+  padding:12px;
+  border:1px solid #e5beb5;
+  border-radius:10px;
+  font-size:14px;
+}
+
+/* ===============================
+   BUTTON
+=============================== */
+.btn-submit{
+  width:100%;
+  padding:14px;
+  background:#8c5454;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:600;
+  margin-top:25px;
+  cursor:pointer;
+}
+
+.btn-submit:hover{
+  background:#6f3f3f;
+}
+
+/* ===============================
+   MOBILE
+=============================== */
+@media(max-width:768px){
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .amenities-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .preview-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .preview-grid img:first-child{
+    grid-column: span 2;
+  }
+} 
+
+/* =============================== ERROR MESSAGES =============================== */
+
+.error{
+  color:red;
+  font-size:12px;
+  margin-top:4px;
+}
+
+.server-error{
+  background:#ffe0e0;
+  color:#b00020;
+  padding:10px;
+  border-radius:8px;
+  margin-bottom:15px;
+  text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

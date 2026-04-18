@@ -1,0 +1,68 @@
+.help-container{
+width:600px;
+margin:auto;
+margin-top:40px;
+background:rgb(236, 213, 213);
+padding:20px;
+border-radius:8px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.help-page{
+display:flex;
+justify-content:center;
+padding-top:80px;
+background:#f6efea;
+min-height:90vh;
+}
+
+
+.help-section{
+margin-top:20px;
+}
+
+.help-item{
+padding:12px;
+border-bottom:1px solid #eee;
+cursor:pointer;
+}
+
+.help-item:hover{
+background:#f5f5f5;
+}
+/* ================= TABLET ================= */
+@media (max-width: 768px){
+
+  .help-container{
+    width:90%;        /* instead of 600px */
+    padding:18px;
+  }
+
+  .help-page{
+    padding-top:70px;
+  }
+
+  .help-item{
+    padding:10px;
+    font-size:15px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px){
+
+  .help-container{
+    width:100%;
+    padding:14px;
+    border-radius:6px;
+  }
+
+  .help-page{
+    padding:60px 10px;
+  }
+
+  .help-item{
+    padding:10px 8px;
+    font-size:14px;
+  }
+}

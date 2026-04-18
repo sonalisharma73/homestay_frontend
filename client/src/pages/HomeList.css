@@ -1,0 +1,280 @@
+/* ===== GLOBAL WRAPPER ===== */
+.home-list-wrapper{
+  min-height:100vh;
+  font-family:"Poppins",sans-serif;
+  background:linear-gradient(to bottom,#f5e9e9,#f8f6f6);
+  padding-top:90px;
+}
+
+/* ===== LOADING ===== */
+.loading-screen{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.loading-text{
+  margin-top:8rem;
+  font-size:1.5rem;
+  color:#444;
+  font-weight:500;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.home-list-container{
+  max-width:1100px;
+  margin:0 auto 4rem auto;
+  background:#e3cfcf;
+  padding:2.5rem;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(49,7,7,0.35);
+}
+
+/* ===== TITLE ===== */
+.home-list-title{
+  text-align:center;
+  font-size:2rem;
+  font-weight:700;
+  color:#4b1a1a;
+  margin-bottom:2rem;
+}
+
+/* ===== GRID ===== */
+/* .home-cards-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:1.5rem;
+  background:#fffaf7;
+  padding:2rem;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(80,40,20,0.35);
+} */
+ .home-cards-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:1.5rem;
+  background:#fffaf7;
+  padding:2rem;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(80,40,20,0.35);
+  justify-items:center;
+}
+
+/* ===== CARD ===== */
+/* .home-card{
+  width:360px;
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(120,60,30,0.25);
+  transition:0.3s;
+} */
+.home-card{
+  width:100%;
+  max-width:360px;
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(120,60,30,0.25);
+  transition:0.3s;
+}
+.home-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 26px rgba(70,35,20,0.45);
+}
+
+/* ===== IMAGE SLIDER ===== */
+.image-slider{
+  position:relative;
+  width:100%;
+  height:260px;
+  overflow:hidden;
+  border-radius:18px;
+  border:3px solid #e7c5bb;
+  padding:6px;
+  background:#fff;
+  
+}
+
+.home-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* ===== SLIDER ARROWS ===== */
+
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+
+  background:transparent !important;
+  border:none;
+
+  padding:0 !important;
+  border-radius:0 !important;
+
+  font-size:26px;
+  font-weight:bold;
+  color:white;
+
+  cursor:pointer;
+  z-index:10;
+}
+
+
+.slide-btn.left{
+  left:12px;
+}
+
+.slide-btn.right{
+  right:12px;
+}
+
+.slide-btn:hover{
+  transform:translateY(-50%) scale(1.1);
+}
+.image-slider:hover .slide-btn{
+  opacity:1;
+}
+
+
+
+.slide-btn:hover{
+  transform:translateY(-50%) scale(1.2);
+  color:#000;
+}
+
+/* ===== DOT INDICATORS ===== */
+.slider-dots{
+  position:absolute;
+  bottom:8px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:5px;
+}
+
+.dot{
+  width:6px;
+  height:6px;
+  background:rgba(255,255,255,0.6);
+  border-radius:50%;
+}
+
+.dot.active{
+  background:#fff;
+}
+
+/* ===== CARD BODY ===== */
+.home-card-body{
+  padding:1rem;
+}
+
+.home-card-body h3{
+  font-size:1.15rem;
+  margin-bottom:4px;
+}
+
+.home-location{
+  font-size:0.9rem;
+  color:#666;
+}
+
+/* ===== PRICE ===== */
+.home-price{
+  margin:6px 0;
+  font-weight:600;
+  color:#dc2626;
+}
+
+/* ===== RATING ===== */
+.rating-row{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin:6px 0;
+}
+
+.star{
+  color:#ccc;
+}
+
+.star.full{
+  color:#f59e0b;
+}
+
+/* ===== BUTTONS ===== */
+.home-buttons{
+  display:flex;
+  gap:6px;
+  margin-top:8px;
+}
+
+.btn-edit,
+.btn-delete{
+  flex:1;
+  border:none;
+  border-radius:8px;
+  padding:7px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.btn-edit{
+  background:#9e6849a8;
+  color:white;
+}
+
+.btn-edit:hover{
+  background:#ddb071;
+}
+
+.btn-delete{
+  background:#a2737b;
+  color:white;
+}
+
+.btn-delete:hover{
+  background:#cb8695;
+}
+
+/* ===== EMPTY STATE ===== */
+.no-home-box{
+  width:100%;
+  text-align:center;
+  padding:70px 20px;
+}
+
+.no-home-box h3{
+  color:#7b4f4f;
+}
+
+.add-first-home-btn{
+  background:#e29578;
+  color:white;
+  border:none;
+  padding:12px 24px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.add-first-home-btn:hover{
+  background:#d67c5c;
+}
+
+
+.home-card-body h3{
+  font-size:16px;
+  line-height:1.3;
+  height:40px;              /* fixed height */
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2;     /* max 2 lines */
+  -webkit-box-orient:vertical;
+}

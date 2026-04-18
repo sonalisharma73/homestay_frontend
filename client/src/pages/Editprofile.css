@@ -1,0 +1,86 @@
+.edit-page{
+  min-height:100vh;
+  background:#fbf4f1;
+  padding:120px 20px 40px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.edit-card{
+  width:100%;
+  max-width:420px;
+  background:white;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.edit-card h2{
+  text-align:center;
+  color:#7b3e36;
+}
+
+.edit-card input,
+.edit-card select{
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  font-size:15px;
+  width:100%;
+  box-sizing:border-box;
+}
+
+.edit-card button{
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:#a05d54;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.edit-card button:hover{
+  background:#8c4f48;
+}
+
+/* Tablet */
+@media (max-width:768px){
+  .edit-card{
+    max-width:90%;
+    padding:25px;
+  }
+}
+
+/* Mobile */
+@media (max-width:480px){
+  .edit-page{
+    padding-top:100px;
+  }
+
+  .edit-card{
+    max-width:95%;
+    padding:20px;
+    border-radius:12px;
+  }
+
+  .edit-card h2{
+    font-size:20px;
+  }
+
+  .edit-card input,
+  .edit-card select{
+    padding:10px;
+    font-size:14px;
+  }
+
+  .edit-card button{
+    padding:12px;
+    font-size:15px;
+  }
+}

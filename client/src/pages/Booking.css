@@ -1,0 +1,556 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Segoe UI, sans-serif;
+}
+
+/* PAGE */
+.booking-page{
+  min-height:100vh;
+  background:#efe3df;
+  padding:110px 40px 80px;
+  display:flex;
+  justify-content:center;
+}
+
+/* MAIN CONTAINER */
+.booking-container{
+  display:flex;
+  gap:50px;
+  width:100%;
+  max-width:1200px;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+/* LEFT CARD */
+.home-box{
+  width:600px;
+  background:#f6ece8;
+  border-radius:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  overflow:hidden;
+}
+
+/* IMAGE */
+.slider{
+  position:relative;
+  width:100%;
+  height:320px;
+}
+
+.slider img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+
+/* SLIDER BUTTON */
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#00000080;
+  color:white;
+  border:none;
+  padding:8px 12px;
+  font-size:22px;
+  cursor:pointer;
+  border-radius:8px;
+}
+
+.left{left:12px;}
+.right{right:12px;}
+
+/* TEXT */
+.home-box h2{
+  margin:20px;
+  font-size:28px;
+  color:#7b3e36;
+}
+
+.home-box p{
+  margin:6px 20px;
+  color:#666;
+}
+
+.price{
+  font-size:24px;
+  font-weight:700;
+  color:#333;
+}
+
+/* DESCRIPTION */
+.description-label{
+  margin:20px;
+  font-weight:700;
+  color:#7b3e36;
+}
+
+.description{
+  margin:0 20px 20px;
+  background:#fff4ef;
+  padding:14px;
+  border-radius:12px;
+  border-left:5px solid #f3a26f;
+}
+
+/* ROOM INFO */
+.room-info{
+  margin:0 20px 30px;
+  background:#e8d8d3;
+  padding:16px;
+  border-radius:16px;
+}
+
+/* RIGHT BOOKING CARD */
+.booking-box{
+  width:380px;
+  background:white;
+  padding:24px;
+  border-radius:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  position:sticky;
+  top:120px;
+}
+
+/* TITLE */
+.booking-box h2{
+  text-align:center;
+  margin-bottom:10px;
+  color:#7b3e36;
+}
+
+/* FORM */
+.booking-box label{
+  display:block;
+  margin-top:12px;
+  font-weight:600;
+  color:#7b3e36;
+}
+
+.booking-box input{
+  width:100%;
+  padding:11px;
+  margin-top:6px;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+/* BUTTON */
+.booking-box button{
+  margin-top:16px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(90deg,#f3a26f,#e6894e);
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+  font-size:15px;
+}
+
+/* PRICE BOX */
+.price-box{
+  margin-top:16px;
+  background:#f7efec;
+  padding:14px;
+  border-radius:14px;
+}
+
+.final{
+  font-size:20px;
+  font-weight:700;
+  color:#7b3e36;
+}
+
+/* MOBILE */
+@media(max-width:1000px){
+  .booking-container{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .home-box,
+  .booking-box{
+    width:95%;
+  }
+
+  .booking-box{
+    position:static;
+  }
+}
+.home-content{
+  padding:20px 24px;
+}
+
+.home-title{
+  font-size:26px;
+  font-weight:700;
+}
+
+.location{
+  color:#777;
+  margin-bottom:10px;
+}
+
+.price-box{
+  margin:10px 0 16px;
+}
+
+.price{
+  font-size:24px;
+  font-weight:700;
+}
+
+.per{
+  color:#888;
+}
+
+.section-label{
+  font-weight:700;
+  margin-top:18px;
+  margin-bottom:6px;
+}
+
+.description{
+  color:#555;
+  line-height:1.6;
+}
+
+.details-card{
+  background:#f6f6f6;
+  padding:16px;
+  border-radius:14px;
+  margin-top:14px;
+}
+
+.details-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:white;
+  border:none;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.left{left:10px;}
+.right{right:10px;}
+/* PAGE FADE */
+.booking-page{
+  animation: fadePage 0.6s ease;
+}
+@keyframes fadePage{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* CARD FLOAT */
+.home-box,
+.booking-box{
+  transition: all .35s ease;
+}
+
+.home-box:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+
+.booking-box:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+
+/* IMAGE ZOOM */
+.slider img{
+  transition: transform .6s ease;
+}
+
+.slider:hover img{
+  transform: scale(1.05);
+}
+
+/* BUTTON GLOW */
+.booking-box button{
+  transition: all .3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-box button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255,140,80,.4);
+}
+
+/* BUTTON SHINE EFFECT */
+.booking-box button::after{
+  content:"";
+  position:absolute;
+  width:40px;
+  height:200%;
+  background:rgba(255,255,255,0.4);
+  top:-50%;
+  left:-60px;
+  transform: rotate(25deg);
+  transition:.6s;
+}
+
+.booking-box button:hover::after{
+  left:120%;
+}
+
+/* INPUT FOCUS GLOW */
+.booking-box input,
+.booking-box select{
+  transition:.25s;
+}
+
+.booking-box input:focus,
+.booking-box select:focus{
+  outline:none;
+  border:1px solid #ff9966;
+  box-shadow:0 0 0 3px rgba(255,153,102,0.2);
+}
+
+/* DETAILS CARD POP */
+.details-card{
+  transition:.3s;
+}
+
+.details-card:hover{
+  transform: scale(1.02);
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* PRICE ANIMATION */
+.price{
+  animation: pricePop .5s ease;
+}
+@keyframes pricePop{
+  from{transform:scale(.8); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+
+/* FINAL PRICE PULSE */
+h3{
+  animation: pulse 1.4s infinite alternate;
+}
+@keyframes pulse{
+  from{transform:scale(1);}
+  to{transform:scale(1.03);}
+}
+
+/* SLIDER BUTTON HOVER */
+.slide-btn{
+  transition:.25s;
+}
+
+.slide-btn:hover{
+  background:#ff9966;
+  color:white;
+  transform: scale(1.15);
+}
+
+/* AVAILABILITY SUCCESS */
+.availability-box{
+  animation: popIn .4s ease;
+}
+@keyframes popIn{
+  from{opacity:0; transform:scale(.9);}
+  to{opacity:1; transform:scale(1);}
+}
+
+
+
+
+
+
+
+
+
+
+
+/* LEFT CARD */
+.home-box {
+  
+  background: #fdf8f5;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.slider img {
+  width: 100%;
+  height: 220px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.home-box h2 {
+  margin-top: 10px;
+  color: #7a3e2e;
+}
+
+.home-box .price {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.room-info {
+  background: #ead8cf;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* RIGHT BOOKING FORM */
+.booking-box {
+  width: 380px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.booking-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #7a3e2e;
+}
+
+/* INPUTS */
+.booking-box label {
+  font-size: 14px;
+  margin-top: 10px;
+  display: block;
+}
+
+.booking-box input,
+.booking-box select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-top: 5px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.booking-box input:focus,
+.booking-box select:focus {
+  border-color: #e6894e;
+  box-shadow: 0 0 5px rgba(230,137,78,0.4);
+}
+
+/* BUTTONS */
+.booking-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #562507, #e6894e);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking-box button:hover {
+  transform: scale(1.03);
+}
+
+/* AVAILABILITY BOX */
+.availability-box {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* PRICE SECTION */
+.booking-box hr {
+  margin: 15px 0;
+}
+
+.booking-box h3 {
+  color: #7a3e2e;
+}
+
+
+.label {
+  font-weight: bold;
+  color: #7a3e2e;
+}
+
+.info-line {
+  margin: 5px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.photo-card{
+  position:relative;
+  margin-bottom:20px;
+  border:3px solid #e7c5bb;
+  border-radius:24px;
+  padding:8px;
+  background:#fff;
+  box-shadow:0 10px 24px rgba(123,62,54,0.25);
+}
+
+.main-img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:18px;
+  transition:0.4s;
+}
+
+/* arrows */
+.prev,.next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#fff;
+  border:none;
+  font-size:22px;
+  padding:6px 12px;
+  border-radius:50%;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,0.25);
+  transition:0.3s;
+}
+
+.prev:hover,.next:hover{
+  background:#7b3e36;
+  color:#fff;
+}
+
+.prev{left:10px;}
+.next{right:10px;}

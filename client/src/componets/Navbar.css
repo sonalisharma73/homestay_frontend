@@ -1,0 +1,165 @@
+/* NAVBAR */
+.navbar {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 30px;
+  z-index: 1000;   /* 🔥 ADD THIS */
+  display: flex;
+  align-items: center;
+   background: linear-gradient(90deg, #562507, #e6894e);
+
+}
+
+/* LEFT */
+.nav-left {
+  flex: 1;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+/* CENTER */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 10px;
+}
+
+/* RIGHT NEAR CENTER */
+
+
+/* PROFILE RIGHT */
+.nav-right {
+  margin-left: auto;
+}
+
+/* COMMON BUTTON STYLE */
+.nav-pill {
+  padding: 6px 12px;
+  border-radius: 20px;
+
+  background: #eee;
+  color: #5b2c25;
+  text-decoration: none;
+  font-size: 13px;
+
+  transition: 0.3s;
+}
+
+.nav-pill:hover {
+  background: #f3e4df;
+}
+
+.nav-pill.active {
+  background: linear-gradient(90deg, #562507, #e6894e);
+  color: white;
+}
+
+/* PROFILE */
+.nav-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 55px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 170px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.dropdown p {
+  padding: 8px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.dropdown p:hover {
+  background: #f3e4df;
+}
+
+
+
+
+
+
+/* NAVBAR (important for layering) */
+
+
+/* PROFILE WRAPPER */
+.profile-area {
+  position: relative;
+}
+
+/* DROPDOWN BOX */
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 60px;
+
+  width: 190px;
+  padding: 8px;
+
+  background: #ffffff;
+  border-radius: 12px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  border: 1px solid #eee;
+
+  z-index: 2000;  /* 🔥 always on top */
+  animation: dropdownFade 0.2s ease;
+}
+
+/* ITEMS */
+.dropdown p {
+  padding: 10px 12px;
+  margin: 0;
+
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #3a1f1a;   /* 🔥 strong contrast */
+  transition: 0.2s;
+}
+
+/* HOVER EFFECT */
+.dropdown p:hover {
+  background: #f3e4df;
+  color: #000;
+}
+
+/* SEPARATOR (optional nice UI) */
+.dropdown p + p {
+  margin-top: 4px;
+}
+
+/* ANIMATION */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

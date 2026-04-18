@@ -1,0 +1,109 @@
+.edit-container {
+  background: #f5ebe6;
+  min-height: 100vh;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-card {
+  width: 100%;
+  max-width: 1100px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.edit-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #5a3825;
+}
+
+.edit-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-section input,
+.form-section select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.img-box {
+  position: relative;
+}
+
+.img-box img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* .img-box button {
+  position: absolute;
+  font:2px;
+  top: 2px;
+  right: 2px;
+  background: rgb(91, 52, 52);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+} */
+.img-box button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  line-height: 1;
+
+  background: #5b3434;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  padding: 0;
+}
+.update-btn {
+  margin-top: 15px;
+  padding: 14px;
+  background: #a67c52;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}

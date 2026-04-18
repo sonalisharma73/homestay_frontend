@@ -1,0 +1,204 @@
+/* SCOPE START */
+.add-event-page .page-container {
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.add-event-page .lux-card {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.add-event-page .heading {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #4a2a24;
+}
+
+.add-event-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-event-page .form-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e0cfc9;
+  background: rgba(255,255,255,0.9);
+  outline: none;
+}
+
+.add-event-page .form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.add-event-page .date-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.add-event-page .btn-primary {
+  background: linear-gradient(90deg, #562507, #e6894e);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.add-event-page .btn-soft {
+  background: #e8d8d3;
+  color: #7b3e36;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.add-event-page .selection-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* ANIMATION */
+.add-event-page .fade-in {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+/* DRAG BOX */
+.add-event-page .upload-box {
+  border: 2px dashed #e6894e;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #fff7f3;
+  position: relative;
+}
+
+.add-event-page .upload-box input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  left: 0;
+  top: 0;
+}
+
+/* PREVIEW */
+.add-event-page .preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
+  gap: 10px;
+}
+
+.add-event-page .preview-card {
+  position: relative;
+  overflow: visible;
+}
+
+/* .add-event-page .preview-card img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+} */
+
+
+
+
+
+
+
+
+
+/* BIGGER PREVIEW */
+.add-event-page .preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.add-event-page .preview-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* IMAGE BIG SIZE */
+.add-event-page .preview-card img {
+  width: 100%;
+  height: 130px;   /* 🔥 increased */
+  object-fit: cover;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+/* HOVER ZOOM (premium feel 😏) */
+.add-event-page .preview-card:hover img {
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.add-event-page .preview-card button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: #e6894e;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.add-event-page .preview-card button:hover {
+  background: #cea087;
+  transform: scale(1.1);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .add-event-page .form-row,
+  .add-event-page .date-row {
+    grid-template-columns: 1fr;
+  }
+}
+/* SCOPE END */

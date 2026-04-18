@@ -1,0 +1,222 @@
+/* ================= Reset ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ================= Navbar ================= */
+.navbar {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #896c6c 0%, #e5beb5 40%, #eee6ca 70%, #f5fae1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar .links a {
+  color: #fff;
+  margin-left: 1.5rem;
+  text-decoration: none;
+}
+
+/* ================= Page ================= */
+.signup-page {
+  min-height: 100vh;
+  padding-top: 60px; /* fix navbar overlap */
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(239, 232, 228);
+  min-height: calc(100vh - 60px);
+}
+
+/* ================= Card ================= */
+.signup-card {
+  background: rgba(255,255,255,0.95);
+  padding: 2rem 1.8rem;
+  border-radius: 1.5rem;
+  box-shadow: 
+    0 4px 12px rgba(210,180,140,0.15),
+    0 8px 24px rgba(210,180,140,0.15),
+    0 12px 32px rgba(210,180,140,0.2);
+  max-width: 400px;
+  width: 95%;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease;
+}
+
+/* ================= Text ================= */
+.signup-card h2 {
+  color: #896c6c;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ================= Input ================= */
+.input-group {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.input-group input,
+.input-group select {
+  padding: 0.7rem;
+  border: 1px solid #e5beb5;
+  border-radius: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  background: #fdfcfb;
+  color: #1a1a1a;
+}
+
+.input-group input:focus {
+  border-color: #896c6c;
+  box-shadow: 0 0 6px rgba(137,108,108,0.3);
+}
+
+/* OTP input */
+.otp-input {
+  text-align: center;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+/* ================= Terms ================= */
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* ================= Buttons ================= */
+button {
+  padding: 0.8rem;
+  background: linear-gradient(90deg, #562507, #e6894e);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 1rem;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #e6894e, #562507); /* reverse gradient */
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* ================= Resend ================= */
+.resend-section {
+  margin-top: 10px;
+}
+
+.resend-btn {
+  background: none;
+  border: none;
+  color: #896c6c;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.resend-btn:disabled {
+  color: gray;
+  cursor: not-allowed;
+}
+
+/* ================= Messages ================= */
+.msg {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ================= Footer ================= */
+.footer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.footer span {
+  color: #896c6c;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ================= Animation ================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= Dark Mode FIX ================= */
+@media (prefers-color-scheme: dark) {
+  body, .signup-container {
+    background: rgb(239, 232, 228) !important;
+    color: #1a1a1a !important;
+  }
+
+  .signup-card {
+    background: rgba(255,255,255,0.97) !important;
+  }
+
+  .input-group input {
+    background: #fdfcfb !important;
+    color: #1a1a1a !important;
+  }
+}
