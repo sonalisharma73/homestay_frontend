@@ -61,7 +61,7 @@ const AddEvent = () => {
     images.forEach(img => data.append("images", img));
 
     try {
-      await axios.post("http://localhost:5000/events/add-event", data, {
+      await axios.post("/events/add-event", data, {
         withCredentials: true
       });
 

@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 export default function MyBookings() {
   const [bookings, setBookings] = useState([]);
   const userId = localStorage.getItem("userId");
- 
+ const BASE = import.meta.env.VITE_API_URL || "";
 const navigate = useNavigate();
   useEffect(() => {
     fetchBookings();
@@ -18,13 +18,13 @@ const navigate = useNavigate();
 
   const fetchBookings = async () => {
     const res = await axios.get(
-      `http://localhost:5000/booking/my-bookings/${userId}`
+      `/booking/my-bookings/${userId}`
     );
     setBookings(res.data);
   };
 
  const cancelBooking = async (id) => {
-  await axios.put(`http://localhost:5000/booking/cancel/${id}`);
+  await axios.put(`/booking/cancel/${id}`);
   fetchBookings();
 };
   const addReview = async (homeId) => {
@@ -37,7 +37,7 @@ if (!rating || rating < 1 || rating > 5) {
 }
     const comment = prompt("Write review");
   
-    const res = await axios.post("http://localhost:5000/booking/review", {
+    const res = await axios.post("/booking/review", {
       homeId,
   
       userId,
@@ -69,7 +69,7 @@ if (!rating || rating < 1 || rating > 5) {
             {/* IMAGE */}
             <img
               className="booking-img"
-              src={`http://localhost:5000/${b.home?.photos?.[0]}`}
+               src={`${BASE}/${b.home?.photos?.[0]}`}
                onClick={() => navigate(`/details/${b.home?._id}`)}
               style={{ cursor: "pointer" }}
             />

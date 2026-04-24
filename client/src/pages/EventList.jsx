@@ -18,7 +18,7 @@ const EventList = () => {
 
   // 🔥 FETCH EVENTS
   useEffect(() => {
-    axios.get("http://localhost:5000/events/events")
+    axios.get("/events/events")
       .then(res => {
         const data = Array.isArray(res.data)
           ? res.data
@@ -76,7 +76,7 @@ const filtered = events.filter(e => {
   const city = normalize(e.location?.city);
   const place = normalize(e.location?.place);
   const typeVal = normalize(e.type);
-
+const BASE = import.meta.env.VITE_API_URL || "";
   const matchSearch =
     title.includes(keyword) ||
     city.includes(keyword) ||
@@ -135,7 +135,7 @@ const filtered = events.filter(e => {
 
               const imageUrl =
                 e.images && e.images.length > 0
-                  ? `http://localhost:5000/${e.images[currentIndex]}`
+                  ? `${BASE}/${e.images[currentIndex]}`
                   : "https://via.placeholder.com/300";
 
               return (

@@ -15,6 +15,8 @@ export default function Profile() {
   const [user, setUser] = useState(null);
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
+  const BASE = import.meta.env.VITE_API_URL || "";
+
 
   useEffect(() => {
     if (userId) {
@@ -27,7 +29,7 @@ export default function Profile() {
   const fetchUser = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/auth/profile/${userId}`
+        `/api/auth/profile/${userId}`
       );
       setUser(res.data);
     } catch (err) {
@@ -39,7 +41,7 @@ export default function Profile() {
   const fetchStats = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/auth/stats/${userId}`
+        `/api/auth/stats/${userId}`
       );
       setStats(res.data);
     } catch (err) {
@@ -70,7 +72,7 @@ export default function Profile() {
             <img
               src={
                 user.profilePic
-                  ? `http://localhost:5000/${user.profilePic}`
+                  ? `${BASE}/${user.profilePic}`
                   : "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
               }
               className="avatar"

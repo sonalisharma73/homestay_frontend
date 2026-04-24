@@ -12,6 +12,7 @@ export default function Booking() {
   const navigate = useNavigate(); 
   const [home, setHome] = useState(null);
   const [imgIndex, setImgIndex] = useState(0);
+const BASE = import.meta.env.VITE_API_URL || "";
 
   const [guestName, setGuestName] = useState("");
   const [phone, setPhone] = useState("");
@@ -35,7 +36,7 @@ const [guestsCount, setGuestsCount] = useState(1);
   /* FETCH HOME */
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/booking/home/${id}`)
+      .get(`/booking/home/${id}`)
       .then((res) => setHome(res.data))
       .catch((err) => console.log(err));
   }, [id]);
@@ -113,7 +114,7 @@ const [guestsCount, setGuestsCount] = useState(1);
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/booking/check",
+        "/booking/check",
         { homeId: id, checkIn, checkOut, roomsNeeded }
       );
 
@@ -131,7 +132,7 @@ const [guestsCount, setGuestsCount] = useState(1);
   /* COD BOOKING */
   const handleCODBooking = async () => {
   try {
-    const res = await axios.post("http://localhost:5000/booking/cod", {
+    const res = await axios.post("/booking/cod", {
       user: localStorage.getItem("userId"), // or session
       home: id,
       checkIn,
@@ -170,7 +171,7 @@ const [guestsCount, setGuestsCount] = useState(1);
   const handleOnlinePayment = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/booking/pay",
+        "/booking/pay",
         { amount: finalPrice }
       );
 
@@ -182,7 +183,7 @@ const [guestsCount, setGuestsCount] = useState(1);
         order_id: order.id,
         handler: async function (response) {
           await axios.post(
-            "http://localhost:5000/booking/verify",
+            "/booking/verify",
             {
               razorpay_order_id: response.razorpay_order_id,
               razorpay_payment_id: response.razorpay_payment_id,
@@ -240,7 +241,8 @@ const [guestsCount, setGuestsCount] = useState(1);
           <div className="home-box">
             <div className="photo-card">
   <img
-    src={`http://localhost:5000/${home.photos?.[imgIndex]}`}
+    // src={`http://localhost:5000/${home.photos?.[imgIndex]}`}
+    src={`${BASE}/${home.photos?.[imgIndex]}`}
     className="main-img"
   />
 

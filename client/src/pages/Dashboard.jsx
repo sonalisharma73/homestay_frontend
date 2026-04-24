@@ -8,7 +8,7 @@ import axios from "../axiosConfig";
 
 
 export default function Dashboard(){
-
+const BASE = import.meta.env.VITE_API_URL || "";
   const userId = localStorage.getItem("userId");
   const [user,setUser] = useState(null);
   const [stats,setStats] = useState(null);
@@ -20,14 +20,14 @@ export default function Dashboard(){
 
   const fetchUser = async ()=>{
     const res = await axios.get(
-      `http://localhost:5000/api/auth/user/${userId}`
+      `/api/auth/user/${userId}`
     );
     setUser(res.data);
   };
 
   const fetchStats = async ()=>{
     const res = await axios.get(
-      `http://localhost:5000/api/auth/stats/${userId}`
+      `/api/auth/stats/${userId}`
     );
     setStats(res.data);
   };
@@ -45,7 +45,7 @@ export default function Dashboard(){
         <img
           src={
             user.profilePic
-            ? `http://localhost:5000/${user.profilePic}`
+            ? `${BASE}/${user.profilePic}`
             : "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
           }
           className="avatar"

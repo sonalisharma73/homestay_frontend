@@ -23,7 +23,7 @@ export default function EditProfile() {
 
   const fetchUser = async () => {
     const res = await axios.get(
-      `http://localhost:5000/api/auth/profile/${userId}`
+      `/api/auth/profile/${userId}`
     );
     setForm(res.data);
   };
@@ -43,7 +43,7 @@ export default function EditProfile() {
     if (image) data.append("profilePic", image);
 
     await axios.put(
-      `http://localhost:5000/api/auth/update-profile/${userId}`,
+      `/api/auth/update-profile/${userId}`,
       data
     );
 

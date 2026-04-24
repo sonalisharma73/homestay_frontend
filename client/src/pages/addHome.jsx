@@ -19,7 +19,8 @@ const [successMsg, setSuccessMsg] = useState("");
   const editing =
     new URLSearchParams(locationRouter.search).get("editing") === "true";
 
-  const BACKEND_URL = "http://localhost:5000";
+  // const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL = import.meta.env.VITE_API_URL || "";
 
   const [formData, setFormData] = useState({
     housename: "",
@@ -56,7 +57,7 @@ const [successMsg, setSuccessMsg] = useState("");
 
 
   useEffect(() => {
-  axios.get("http://localhost:5000/api/auth/check-auth", {
+  axios.get("/api/auth/check-auth", {
     withCredentials: true
   })
   .then(res => {
@@ -69,7 +70,7 @@ const [successMsg, setSuccessMsg] = useState("");
   useEffect(() => {
   if (!editing || !homeId) return;
 
-  axios.get(`${BACKEND_URL}/host/edit-home/${homeId}`)
+  axios.get(`/host/edit-home/${homeId}`)
     .then(res => {
       const h = res.data.home;
       console.log("EDIT HOME DATA:", h);

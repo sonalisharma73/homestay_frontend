@@ -68,12 +68,12 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
-  
+  const BASE = import.meta.env.VITE_API_URL || "";
 
   useEffect(() => {
     const fetchHomes = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/store/homes");
+        const res = await axios.get("/store/homes");
         const data = Array.isArray(res.data)
           ? res.data
           : res.data.homes || [];
@@ -168,7 +168,7 @@ const HomeCard = ({ home, navigate }) => {
   const [imgIndex, setImgIndex] = useState(0);
   const [fav, setFav] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
-
+const BASE = import.meta.env.VITE_API_URL || "";
   // 🔥 AUTO SLIDER
   useEffect(() => {
     if (!home.photos?.length) return;
@@ -187,7 +187,7 @@ const HomeCard = ({ home, navigate }) => {
 
   try {
     await axios.post(
-      "http://localhost:5000/store/favourite",
+      "/store/favourite",
       { homeid: home._id },
       { withCredentials: true }
     );
@@ -213,7 +213,7 @@ const HomeCard = ({ home, navigate }) => {
       {/* IMAGE */}
       <div className="card-img">
         <img
-          src={`http://localhost:5000/${home.photos?.[imgIndex]}`}
+          src={`${BASE}/${home.photos?.[imgIndex]}`}
           alt={home.housename}
         />
       </div>

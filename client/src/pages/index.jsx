@@ -36,6 +36,8 @@ const heroImages = [
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
+const BASE = import.meta.env.VITE_API_URL || "";
+
 
   // 🔥 auto change
   useEffect(() => {
@@ -144,7 +146,7 @@ const Card = ({ item, type, navigate }) => {
       <div className="slider">
   {images.length > 0 && (
     <img
-  src={`http://localhost:5000/${images[imgIndex]}`}
+ src={`${BASE}/${images[imgIndex]}`}
   className="slider-img"
 />
   )}

@@ -183,7 +183,7 @@ import axios from "../axiosConfig";
 export default function Details() {
   const { id } = useParams();
   const navigate = useNavigate(); // ✅ added
-
+const BASE = import.meta.env.VITE_API_URL || "";
   const [house, setHouse] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentImg, setCurrentImg] = useState(0);
@@ -191,7 +191,7 @@ export default function Details() {
   useEffect(() => {
     const fetchHouse = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/store/homes/${id}`);
+        const res = await axios.get(`/store/homes/${id}`);
         setHouse(res.data);
       } catch (err) {
         console.error(err);
@@ -233,7 +233,7 @@ export default function Details() {
 
           <div className="photo-card">
             <img
-              src={`http://localhost:5000/${house.photos[currentImg]}`}
+              src={`${BASE}/${house.photos[currentImg]}`}
               className="main-img"
             />
 

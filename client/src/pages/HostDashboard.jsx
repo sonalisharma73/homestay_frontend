@@ -11,7 +11,7 @@ import axios from "../axiosConfig";
 export default function HostDashboard() {
   const navigate = useNavigate();
   const userId = localStorage.getItem("userId");
-
+const BASE = import.meta.env.VITE_API_URL || "";
   const [user, setUser] = useState(null);
   const [stats, setStats] = useState(null);
 
@@ -24,7 +24,7 @@ export default function HostDashboard() {
   const fetchUser = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/auth/profile/${userId}`
+        `/api/auth/profile/${userId}`
       );
       setUser(res.data);
     } catch (err) {
@@ -36,7 +36,7 @@ export default function HostDashboard() {
   const fetchStats = async () => {
     try {
       const res = await axios.get(
-  `http://localhost:5000/host/stats/${userId}`
+  `/host/stats/${userId}`
 );
       setStats(res.data);
     } catch (err) {
@@ -63,7 +63,7 @@ export default function HostDashboard() {
             <img
               src={
                 user.profilePic
-                  ? `http://localhost:5000/${user.profilePic}`
+                  ? `${BASE}/${user.profilePic}`
                   : "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
               }
               className="avatar"

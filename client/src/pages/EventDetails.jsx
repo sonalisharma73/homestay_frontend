@@ -9,11 +9,12 @@ export default function EventDetails() {
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentImg, setCurrentImg] = useState(0);
+const BASE = import.meta.env.VITE_API_URL || "";
 
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/events/${id}`);
+        const res = await axios.get(`/events/${id}`);
         setEvent(res.data);
       } catch (err) {
         console.log(err);
@@ -51,7 +52,7 @@ export default function EventDetails() {
           {/* IMAGE */}
           <div className="photo-card">
             <img
-              src={`http://localhost:5000/${event.images[currentImg]}`}
+              src={`${BASE}/${event.images[currentImg]}`}
               className="main-img"
             />
 

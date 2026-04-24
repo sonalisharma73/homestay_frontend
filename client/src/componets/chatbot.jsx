@@ -98,7 +98,7 @@ function Chatbot() {
     try {
 
       const res = await axios.post(
-        "http://localhost:5000/api/chatbot",
+        "/api/chatbot",
         { message: userText }
       );
 
