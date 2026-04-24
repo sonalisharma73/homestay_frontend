@@ -163,3 +163,91 @@
     transform: translateY(0);
   }
 }
+
+
+
+
+
+
+
+
+/* ================= BASE IMPROVEMENTS ================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+/* prevent overflow */
+.nav-center {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+/* ================= TABLET (<= 1024px) ================= */
+@media (max-width: 1024px) {
+
+  .nav-pill {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .nav-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+}
+
+/* ================= MOBILE (<= 768px) ================= */
+@media (max-width: 768px) {
+
+  /* hide center menu */
+  .nav-center {
+    display: none;
+  }
+
+  /* navbar spacing */
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .nav-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* dropdown becomes full menu */
+  .dropdown {
+    width: 220px;
+    right: 0;
+    top: 60px;
+  }
+}
+
+/* ================= EXTRA SMALL (<= 480px) ================= */
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .nav-avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
+
+
+

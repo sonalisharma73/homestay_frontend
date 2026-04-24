@@ -228,8 +228,17 @@ export default function Navbar() {
             onClick={() => setShowMenu(!showMenu)}
           />
 
-          {showMenu && (
-            <div className="dropdown">
+         {showMenu && (
+  <div className="dropdown">
+
+    {/* 🔥 MOBILE NAV LINKS */}
+    <div className="mobile-links">
+      <p onClick={()=>navigate("/")}>🏡 Homes</p>
+      <p onClick={()=>navigate("/homes")}>HomeStays</p>
+      <p onClick={()=>navigate("/event/eventlist")}>🎉 Events</p>
+    </div>
+
+    {/* EXISTING MENU */}
 
               {role === "guest" && (
                 <>
