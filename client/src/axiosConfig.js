@@ -7,7 +7,11 @@
 
 import axios from "axios";
 
-const API = import.meta.env.VITE_API_URL || "";
+const API = import.meta.env.VITE_API_URL;
+
+if (!API) {
+  throw new Error("VITE_API_URL is not defined");
+}
 
 const instance = axios.create({
   baseURL: API,
